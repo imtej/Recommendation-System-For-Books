@@ -1,7 +1,7 @@
 # End-to-End Recommendation System Project
 
 
-## Recommendation System for Books
+## Recommendation System for Books (Using Collaborative Filtering)
 
 ### Introduction About the Data :
 
@@ -32,7 +32,7 @@ Kaggle Dataset Source Link:
 
 ### Project Objective
 
-- Build and deploy an ML Model (Recommendation System) which takes a book name as input and recommends similar books as per the collaborative ratings of the users. Along with that it also shows the most popular top 50 books as per the ratings of the users.
+- Build and deploy an ML Model (Recommendation System using Collaborative Filtering) which takes a book name as input and recommends similar books as per the collaborative ratings of the users. Along with that it also shows the most popular top 50 books as per the ratings of the users.
 
 
 
@@ -56,7 +56,7 @@ Kaggle Dataset Source Link:
   - Generated new Features like `num_ratings`, `avg_ratings` after merging the relevant dataframes to find the insights. (eg: `popular_df` have the top 50 most popular Books as per the ratings of the users.)
   - **Vectorization of user-book interactions:** Vectorization of Books having Users' ratings as the elements of the vector in higher dimensional space. (No. of relevant users = Dimensionality of space, No. of relevant Books = No. of vectors (points) in that higher dimensional space.)
   - Made the pandas `pivot table` for the vectorization.
-  - Employed `collaborative filterings technique` as `cosine similarities` amongst the books to find the recommendation of similar books as per the collaborative ratings of the users.
+  - Employed `collaborative filtering technique` as `cosine similarities` amongst the books to find the recommendation of similar books as per the collaborative ratings of the users.
   - Defined and implemented the `recommend function` which takes input as Book Title and follows the considerations of `collaborative filterings` into the account to give the recommendations of similar Books.
  
 #### Model Saving
