@@ -55,9 +55,10 @@ Kaggle Dataset Source Link:
 #### model Bulding
   - Generated new Features like `num_ratings`, `avg_ratings` after merging the relevant dataframes to find the insights. (eg: `popular_df` have top 50 most popular Books as per the ratings of the users.)
   - **Vectorization of user-book interactions:** Vectorization of Books having Users' ratings as the elements of the vector in higher dimensional space. (No. of relevant users = Dimensionality of space, No. of relevant Books = No. of vectors (points) in that higher dimensional space.)
+  - Made the pandas `pivot table` for the vectorization.
   - Employed `collaborative filterings technique` as `cosine similarities` amongs the books to find the recommendation of the similar books as per the collaborative ratings of the users.
   - Defined and implemented the `recommend function` which takes input as Book Title and follows the considerations of `collaboartive filterings` into the account to give the recomendations of similar Books.
-
+ 
 #### Model Saving
  - Relev
 
