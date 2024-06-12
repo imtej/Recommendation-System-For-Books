@@ -1,4 +1,4 @@
-# End to End Recommendation System Project
+# End-to-End Recommendation System Project
 
 
 ## Recommendation System for Books
@@ -20,7 +20,7 @@ Contains the users. Note that user IDs (`User-ID`) have been anonymized and map 
 
 **Books:**
 
-Books are identified by their respective `ISBN`. Invalid ISBNs have already been removed from the dataset. Moreover, some content-based information is given (`Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`), obtained from Amazon Web Services. Note that in case of several authors, only the first is provided. URLs linking to cover images are also given, appearing in three different flavours (`Image-URL-S`, `Image-URL-M`, `Image-URL-L`), i.e., small, medium, large. These URLs point to the Amazon web site.
+Books are identified by their respective `ISBN`. Invalid ISBNs have already been removed from the dataset. Moreover, some content-based information is given (`Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`), obtained from Amazon Web Services. Note that in the case of several authors, only the first is provided. URLs linking to cover images are also given, appearing in three different flavours (`Image-URL-S`, `Image-URL-M`, `Image-URL-L`), i.e., small, medium, and large. These URLs point to the Amazon website.
 
 
 **Ratings:**
@@ -32,7 +32,7 @@ Kaggle Dataset Source Link:
 
 ### Project Objective
 
-- Build and deploy a ML Model (Recommendation System) which takes a book name as input and recommends similar books as per the collaborative ratings of the users. Along with that it also shows most popular top 50 books as per the ratings of the users.
+- Build and deploy an ML Model (Recommendation System) which takes a book name as input and recommends similar books as per the collaborative ratings of the users. Along with that it also shows the most popular top 50 books as per the ratings of the users.
 
 
 
@@ -41,43 +41,34 @@ Kaggle Dataset Source Link:
 
 #### Data Ingestion
 
- **Loading the Data**: Every csv datasets `books`, `Users`, `Ratings` are loaded into pandas DataFrames.
+ **Loading the Data**: Every csv dataset `books`, `Users`, and `Ratings` are loaded into pandas DataFrames.
 
 #### Data Transformation
 
-**Data Preparation:**
+- **Data Preparation:**
    
    - Cleaning the data
    - Handling missing values
-   - Handling Categorical fetures
+   - Handling Categorical features
    - Feature engineering
 
-#### model Bulding
-  - Generated new Features like `num_ratings`, `avg_ratings` after merging the relevant dataframes to find the insights. (eg: `popular_df` have top 50 most popular Books as per the ratings of the users.)
+#### Model Building
+  - Generated new Features like `num_ratings`, `avg_ratings` after merging the relevant dataframes to find the insights. (eg: `popular_df` have the top 50 most popular Books as per the ratings of the users.)
   - **Vectorization of user-book interactions:** Vectorization of Books having Users' ratings as the elements of the vector in higher dimensional space. (No. of relevant users = Dimensionality of space, No. of relevant Books = No. of vectors (points) in that higher dimensional space.)
   - Made the pandas `pivot table` for the vectorization.
-  - Employed `collaborative filterings technique` as `cosine similarities` amongs the books to find the recommendation of the similar books as per the collaborative ratings of the users.
-  - Defined and implemented the `recommend function` which takes input as Book Title and follows the considerations of `collaboartive filterings` into the account to give the recomendations of similar Books.
+  - Employed `collaborative filterings technique` as `cosine similarities` amongst the books to find the recommendation of similar books as per the collaborative ratings of the users.
+  - Defined and implemented the `recommend function` which takes input as Book Title and follows the considerations of `collaborative filterings` into the account to give the recommendations of similar Books.
  
 #### Model Saving
- - Relev
+ - stored (`serialized`) the relevant dataframes and models by dumping them in the `pickle` format to load in `app.py`(eg: `books.pkl`, `popular.pkl`, `pivot_table.pkl`, `similarity_scores.pkl`).
 
-5. Flask App creation : 
-    * Flask app is created with User Interface to predict the Student's Performance on Math Score inside a Web Application.
-
-## Exploratory Data Analysis Notebook
-
-Link : [EDA Notebook](./notebook/1_EDA_STUDENT_PERFORMANCE.ipynb)
+#### Flask App creation : 
+ - Made `Flask app` using `HTML` (for `css`, implemented `Bootstrap` inside the HTML file) with two pages (`index.html` and `recommend.html`) as a `UI` inside a Web Application.
 
 
-## Model Training Approach Notebook
+#### Deployment of Flask application on Render:
 
-Link : [Model Training Notebook](./notebook/2_MODEL_TRAINING.ipynb)
-
-
-# Microsoft Azure Deployment using Github Actions:
-
-Microsoft Azure link : [https://stdntperformance.azurewebsites.net/predictdata]
+ - `Render` deployed link : [https://recommendation-system-for-books.onrender.com/]
 
 
 # Screenshot of UI
