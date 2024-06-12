@@ -71,6 +71,33 @@ Kaggle Dataset Source Link:
  - `Render` deployed link : [https://recommendation-system-for-books.onrender.com/]
 
 
-# Screenshot of UI
-Filling features in the Homepage
-![HomepageUI](./Screenshots/student_performance_filled_data.png)
+# Screenshots of UI
+
+
+## Homepage 
+
+![HomepageUI](./screenshots/homepage.png)
+
+
+## Recommend Page 
+  - 1
+
+![RecommendUI](./screenshots/recommend1.png)
+
+  - 2
+  
+![RecommendUI](./screenshots/recommend2.png)
+
+  - 3
+
+![RecommendUI](./screenshots/recommend3.png)
+
+
+
+## File Structure
+  - `app.py:` The main Flask application file.
+  - `model_files_as_pickle/:` Directory containing the pickled model files.
+  - `templates/:` HTML templates for rendering the web pages.
+      - `index.html:` Homepage displaying the most popular books.
+      - `recommend.html:` Page for entering a book name and displaying recommendations.
+  - `requirements.txt:` A list of Python dependencies required to run the project.
